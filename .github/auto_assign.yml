@@ -8,7 +8,7 @@ addAssignees: author
 # Set 0 to add all the reviewers (default: 0)
 #numberOfReviewers그룹명
 #numberOfReviewers: 1
-numberOfReviewersGroupA: 1
+numberOfReviewersGroupA: 2
 
 numberOfReviewersGroupB: 1
 # A number of assignees to add to the pull request
@@ -21,9 +21,11 @@ useReviewGroups: true
 
 # A list of reviewers, split into different groups, to be added to pull requests (GitHub user name)
 reviewGroups:
+#  필수 리뷰어들
   groupA:
     - jino817
     - wererewe
+#나머지 리뷰어들 지정하고 위에서는 랜덤 숫자 지정!
   groupB:
     - jino817
     - saerom26
