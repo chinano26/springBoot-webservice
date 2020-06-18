@@ -18,11 +18,11 @@ useReviewGroups: true
 
 # A list of reviewers, split into different groups, to be added to pull requests (GitHub user name)
 reviewGroups:
-#  필수 리뷰어들
+#  필수 리뷰어들 위에 숫자는 이 그룹의 total
   required:
     - jino817
     - saerom26
-#나머지 리뷰어들 지정하고 위에서는 랜덤 숫자 지정!
+#나머지 리뷰어들
   namerge:
     - wererewe
     - jino817
