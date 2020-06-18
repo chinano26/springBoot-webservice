@@ -1,19 +1,37 @@
-# This is a basic workflow to help you get started with Actions
-
-name: 'Auto Assign Test'
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+name: "Assign Reviewers"
 on:
-  pull_request
+  pull_request:
+    types: [opened, ready_for_review]
 
 jobs:
-  add-reviews:
+  assign-reviewers:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.1.1
+      - name: "Assign Team and Persons"
+        uses: rowi1de/auto-assign-review-teams@v0.0.6
         with:
-          cofiguration-path: ".github/auto_assign.yml"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          teams: "practice-teams"         # only works for GitHub Organisation/Teams
+          persons: "kyungjin"            # add individual persons here
+          include-draft: false            # Draft PRs will be skipped (default: false)
+          skip-with-manual-reviewers: 9   # Skip this action, if the number of reviwers was already assigned (default: 0)
+
+# This is a basic workflow to help you get started with Actions
+
+#name: 'Auto Assign Test'
+#
+## Controls when the action will run. Triggers the workflow on push or pull request
+## events but only for the master branch
+#on:
+#  pull_request
+#
+#jobs:
+#  assign-reviewers:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: kentaro-m/auto-assign-action@v1.1.1
+#        with:
+#          cofiguration-path: ".github/auto_assign.yml"
 #     branches: [ master ]
 
 # # A workflow run is made up of one or more jobs that can run sequentially or in parallel
