@@ -22,8 +22,8 @@ reviewGroups:
     - jino817
     - kyungjin
   groupB:
+    - jino817
     - chinano26
-    - kyungjin
 
 # Set to true to add assignees from different groups to pull requests
 useAssigneeGroups: false
